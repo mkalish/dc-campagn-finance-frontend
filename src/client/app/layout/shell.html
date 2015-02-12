@@ -1,0 +1,23 @@
+<div ng-controller="ShellController as vm" class="md-default-theme">
+    <div layout="column" layout-fill>
+        <md-toolbar md-scroll-shrink class="md-default-theme">
+            <div class="md-toolbar-tools">
+                <span ui-sref="landing">DC Campaign Finance Watch</span>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+    </div>
+    <section id="content" class="content">
+
+        <div ui-view class="shuffle-animation"></div>
+
+        <div ngplus-overlay
+             ngplus-overlay-delay-in="50"
+             ngplus-overlay-delay-out="700"
+             ngplus-overlay-animation="dissolve-animation">
+            <img src="../../content/images/busy.gif"/>
+
+            <div class="page-spinner-message overlay-message">{{vm.busyMessage}}</div>
+        </div>
+    </section>
+</div>

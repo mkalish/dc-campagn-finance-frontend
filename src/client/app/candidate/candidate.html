@@ -1,0 +1,13 @@
+<md-content>
+	<h1>{{vm.candidate.name.first_name}} {{vm.candidate.name.last_name}}</h1>
+	<div>
+		<div>Total donors: {{vm.candidate.numberOfDonors}}</div>
+		<div>Contributor Quality: {{vm.candidate.contributorQuality | number:2}}</div>
+	</div>
+	<div ng-repeat="contribution in vm.candidate.contributions">
+		<div>
+			<span>Amount: {{contribution.amount | currency}}</span>
+			<span>Contributor: {{contribution.contributor}}</span>
+		</div>
+	</div>
+</md-content>

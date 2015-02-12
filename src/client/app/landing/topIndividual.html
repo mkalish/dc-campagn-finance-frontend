@@ -1,0 +1,16 @@
+<md-content>
+	<table>
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Amount</td>
+			</tr>
+		</thead>
+		<tbody ng-repeat="donor in vm.individualContributors">
+			<tr>
+				<td>{{donor._id}}</td>
+				<td>{{donor.amount | currency}}</td>
+			</tr>
+		</tbody>
+	</table>
+</md-content>
