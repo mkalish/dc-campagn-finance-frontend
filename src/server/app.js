@@ -36,17 +36,18 @@ switch (environment){
         break;
 }
 
+
+
 var proxy = httpProxy.createProxyServer({
-    target: 'http://dc-finance-backend.herokuapp.com/dc-campaign-finance'
+    target: 'http://dc-finance-backend.herokuapp.com/dc-campaign-finance',
+    changeOrigin: true
 });
 
-proxy.on('error', function(proxyRes, req, res){
-    console.log(res);
-    res.close();
+proxy.on('error', function(err, req, res){
+    console.log(err);
 });
 
 function proxyMiddleware(req, res, next) {
-    console.log(req);
     if(req.url.indexOf('api') !== -1) {
         proxy.web(req, res);
     } else {
