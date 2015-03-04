@@ -6,6 +6,7 @@ var notifier = require('node-notifier');
 var path = require('path');
 var paths = require('./gulp.config.json');
 var plug = require('gulp-load-plugins')();
+var sass = require('gulp-ruby-sass');
 var reload = browserSync.reload;
 
 var colors = plug.util.colors;
@@ -89,13 +90,24 @@ gulp.task('fonts', function() {
  * @return {Stream}
  */
 gulp.task('images', function() {
-    var dest = paths.build + 'content/images';
+    var dest = paths.build + 'images';
     log('Compressing, caching, and copying images');
-    return gulp
+    return gulp 
         .src(paths.images)
         .pipe(plug.imagemin({
             optimizationLevel: 3
         }))
+        .pipe(gulp.dest(dest));
+});
+
+/**
+ * Convert Sass to CSS
+ */
+gulp.task('sass', function () {
+    var dest = paths.build + 'css';
+    log('Converting Sass (.scss) to CSS');
+    gulp.src('./scss/*.scss')
+        .pipe(sass())
         .pipe(gulp.dest(dest));
 });
 
