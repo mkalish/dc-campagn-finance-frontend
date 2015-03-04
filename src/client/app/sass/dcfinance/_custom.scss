@@ -1,0 +1,206 @@
+// Your custom SCSS should be written here...
+
+body {
+  height: 10000px;
+}
+
+// red, top-level nav bar
+.navbar {
+	background: $google-material-700;
+  @include box-shadow(0 2px 5px rgba(0,0,0,.26));
+  color: $white;
+	height: 44px;
+  min-height: inherit;
+	padding: 4px 0px;
+  position: fixed;
+  top: 0; 
+
+  ul {
+    li { 
+      height: inherit;
+      line-height: inherit;
+      vertical-align: middle;
+    }
+
+    li:last-child {
+      padding-left: .8em; //varies depending on screen width
+    }
+  }  
+}
+
+// cover art for the hero area - sits behind other elements
+.hero-background {
+  background: url('../img/presidential-buttons-flickr917press.jpg') no-repeat top center;
+  background-attachment: fixed;
+  @include background-size(cover);
+  height: 70vh;
+  z-index: 1; // this element needs to be in the back
+
+  .hero-container {
+    padding: 5em 0em;
+
+    .hero-area {
+      h2 {
+        color: $white;
+        font-family: $display-font;
+        font-size: $xxxlarge;
+        line-height: 140%;
+        padding-bottom: 1em;
+        text-align: center;
+      }
+    }
+
+    .call-to-action {
+
+      .btn.large {
+        border: 5px solid $white;
+        @include border-radius(150px);
+        height: 250px;
+        margin-top: 50px;
+
+        a {
+          padding-top: 88px;
+        }
+      }  
+    } 
+  }
+}
+
+.active {
+  margin-top: 150px;
+}
+ 
+// gray second level nav bar with icons
+.inner-nav {
+  background: $google-material-gray;
+  height: 150px;
+  padding: 14px 0px;
+  width: 100%;
+
+  .inner-nav-item {
+    height: 120px; //gives us some room to breathe
+    text-align: center;
+    vertical-align: top;
+
+    img {
+      margin: 0 auto;
+    }
+
+    h3 {
+      font-family: $headline-font;
+      font-size: $med;
+      min-width: 138px; // normal 12 column width @940 is 140px, I want almost all of that per item at this breakpoint
+      padding-top: 4px;
+    }
+
+    h4 {
+      font-family: $headline-font;
+      font-size: 14px; //override, between norm and small sizes from _settings.scss
+      padding-top: 0px;
+    }
+  }
+}
+
+// card layout
+.card-container {
+  border: 1px solid $google-material-gray;
+  @include border-radius(2px);
+  margin: 20px auto;
+  min-height: 220px;
+  padding: 0px;
+  width: 940px;
+
+  .row {
+    padding: 0px;
+  }
+
+  .card-titlebar {
+    background: $google-material-500;
+    @include border-radius(2px);
+    height: 35px;
+    padding: 4px 0px 0px 8px;
+    width: 100%;
+
+    h2 {
+      color: $white;
+      font-family: $headline-font;
+      font-size: $med;
+      padding: 3px;
+    }
+  }
+
+  .card1-left-column {
+    padding: 20px 0px 0px 40px;
+
+    h3 {
+      font-weight: bold;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+
+    .card1-details {
+      border-spacing: 20px;
+      border-collapse: collapse;
+      display: table;
+
+      .card1-details-row {
+        display: table-row;
+
+        img {
+          display: table-cell;
+          padding: 10px;
+          vertical-align: middle;
+        }
+
+        h4 {
+          display: table-cell;
+          font-family: $display-font;
+          font-size: $xxlarge;
+          padding: 0px 0px 0px 30px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .summary-text {
+      padding: 20px 20px 30px 20px; 
+    }
+  }
+
+  .card1-right-column {
+    padding: 20px 0px 20px 30px;
+
+    .card1-item {
+      padding: 8px 0px 8px 40px;
+
+      img {
+        border: 3px solid $dark-gray;
+        @include border-radius(25px);
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .card1-candidate {
+        display: inline-block;
+        font-size: $large;
+        padding-left: 20px;
+        vertical-align: middle;
+      }
+    }
+  }    
+}
+
+.card-container:first {
+  margin-top: 50px;
+}
+
+h1 {
+  color: $white;
+  font-family: $headline-font;
+  font-size: $med;
+  padding-top: 4px;
+}
+
+.extra-padding {
+  margin-top: 170px;
+}
