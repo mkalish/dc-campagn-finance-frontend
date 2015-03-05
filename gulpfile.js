@@ -6,7 +6,6 @@ var notifier = require('node-notifier');
 var path = require('path');
 var paths = require('./gulp.config.json');
 var plug = require('gulp-load-plugins')();
-var sass = require('gulp-sass');
 var compass = require('gulp-compass');
 var reload = browserSync.reload;
 
