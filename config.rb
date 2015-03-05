@@ -8,17 +8,17 @@
 
 # Uncomment these to use regular Ruby gems.
 require 'modular-scale'
-require 'compass'
-require "compass/reset"
-require "compass/css3/background-size"
-require "compass/css3/border-radius"
-require "compass/css3/box-shadow"
-require "compass/css3/opacity"
+#require 'compass'
+#require "compass/reset"
+#require "compass/css3/background-size"
+#require "compass/css3/border-radius"
+#require "compass/css3/box-shadow"
+#require "compass/css3/opacity"
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "src/build/css"
-sass_dir = "sass"
+css_dir = "src/client/content/css"
+sass_dir = "src/client/content/sass"
 images_dir = "img"
 
 # You can select your preferred output style here (can be overridden via the command line) :nested or :expanded or :compact or :compressed:

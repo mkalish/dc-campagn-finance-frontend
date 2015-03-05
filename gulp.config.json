@@ -5,6 +5,9 @@
   "css": [
     "./src/client/content/css/styles.css"
   ],
+  "scss": [
+    "./src/client/content/sass/main.scss"
+  ],
   "js": [
     "src/client/app/**/*.module.js",
     "src/client/app/**/*.js",

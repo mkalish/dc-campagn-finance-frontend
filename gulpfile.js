@@ -6,7 +6,8 @@ var notifier = require('node-notifier');
 var path = require('path');
 var paths = require('./gulp.config.json');
 var plug = require('gulp-load-plugins')();
-var sass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
+var compass = require('gulp-compass');
 var reload = browserSync.reload;
 
 var colors = plug.util.colors;
@@ -105,9 +106,13 @@ gulp.task('images', function() {
  */
 gulp.task('sass', function () {
     var dest = paths.build + 'css';
-    log('Converting Sass (.scss) to CSS');
-    gulp.src('./scss/*.scss')
-        .pipe(sass())
+    log('compiling sass');
+    gulp.src(paths.scss)
+        .pipe(compass({
+            config_file: './config.rb',
+            css: 'src/client/content/css',
+            sass: 'src/client/content/sass'
+        }))
         .pipe(gulp.dest(dest));
 });
 
@@ -154,7 +159,7 @@ gulp.task('inject-and-rev', ['templatecache', 'wiredep'], function() {
  * Build the optimized app
  * @return {Stream}
  */
-gulp.task('build', ['inject-and-rev', 'images', 'fonts'], function() {
+gulp.task('build', ['sass','inject-and-rev', 'images', 'fonts' ], function() {
     log('Building the optimized app');
 
     // clean out the temp folder when done
@@ -275,7 +280,8 @@ function serve(args) {
             'NODE_ENV': args.mode,
             'PORT': port
         },
-        watch: [paths.server]
+        ext: 'scss js',
+        watch: [paths.server, paths.client]
     };
 
     var exec;
@@ -290,10 +296,13 @@ function serve(args) {
         gulp.watch(paths.client + '**/*.*', ['build']);
     }
 
+    gulp.watch('./src/client/content/sass/**.*', ['sass']);
+
     return plug.nodemon(options)
         .on('start', function() {
             startBrowserSync();
         })
+        .on('change', ['sass'])
         .on('restart', function() {
             log('restarted!');
             setTimeout(function () {
