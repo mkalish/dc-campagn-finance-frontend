@@ -18,7 +18,7 @@
 			{
 				state: 'landing',
 				config: {
-					url: '/landing',
+					url: '/',
 					views: {
 						'': {templateUrl: 'app/landing/landing.html'},
 						'nextElection@landing': {
