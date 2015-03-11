@@ -8,7 +8,10 @@
 		</thead>
 		<tbody ng-repeat="donor in vm.corporateContributors">
 			<tr>
-				<td>{{donor._id}}</td>
+				<td>
+					{{donor._id.name}}
+					<a ng-if="donor.type !== 'individual'" ui-sref="corporation({corporation:donor})">Details</a>
+				</td>
 				<td>{{donor.amount | currency}}</td>
 			</tr>
 		</tbody>
