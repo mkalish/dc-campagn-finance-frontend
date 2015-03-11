@@ -39,7 +39,7 @@ switch (environment){
 
 
 var proxy = httpProxy.createProxyServer({
-    target: 'http://dc-finance-backend.herokuapp.com/dc-campaign-finance',
+    target: 'http://localhost:3000/dc-campaign-finance',
     changeOrigin: true
 });
 

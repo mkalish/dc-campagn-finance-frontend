@@ -11,7 +11,8 @@
         'app.election',
         'app.official',
         'app.contributor',
-        'app.candidate'
+        'app.candidate',
+        'app.corporation'
     ]);
 
 })();
