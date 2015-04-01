@@ -1,7 +1,28 @@
-<md-content layout="column">
-	<div flex ui-view="nextElection"></div>
-	<md-divider></md-divider>
-	<div flex ui-view="currentOfficials"></div>
+<section class="content-block">
+    <div class="row">
+        <h1>Follow the Money</h1>
+        <div class="slideshow">
+            <div class="slide">
+                <div>
+                    <h2>Something you should care about</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="content-block bg-red">
+    <div class="row">
+        <h1>Have your say in the next election</h1>
+    </div>
+</section>
+<section class="content-block">
+    <div class="row">
+        <h1>Meet your elected officials</h1>
+		<!-- <div flex ui-view="nextElection"></div> -->
+        <div ui-view="currentOfficials"></div>
+    </div>
+</section>
+<md-content>
 	<md-divider></md-divider>
 	<div flex ui-view="topIndividual"></div>
 	<md-divider></md-divider>
