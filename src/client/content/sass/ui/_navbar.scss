@@ -1,18 +1,21 @@
 /* Navigation (with dropdowns) */
 
 .navbar {
+  padding: 8px 0px;
   width: 100%;
-  min-height: 60px;
   display: block;
-  margin-bottom: 20px;
   background: $navbar-color; // Change this color in settings to change the navbar color
   position: relative;
+  min-height: 0px;
+
+
   @include respond(all-phones) {
     border: none;
     .column, .columns {
       min-height: 0;
     }
   }
+
 
   &.fixed {
     position: fixed;
@@ -21,6 +24,21 @@
   &.pinned {
     position: absolute;
   }
+
+  .row {
+    color: #fff;
+  }
+
+  .search {
+    float: right;
+  }
+
+  /* Cancel out md-toolbar styles*/
+  md-toolbar {
+    min-height: 0px;
+    box-shadow: none;
+  }
+
   a.toggle {
     display: none;
 
