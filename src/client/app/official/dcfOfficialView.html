@@ -1,5 +1,6 @@
 <div flex="20">
-	<div class="name" >
+	<img src="http://stuartdotson.com/dev/candidate-pic.png" class="profile-pic">
+	<div class="name" ui-sref="candidate({firstName:official._id.first_name, lastName:official._id.last_name})">
 		<span>{{official._id.first_name}} </span><span>{{official._id.last_name}}</span>
 	</div>
 	<div>
@@ -8,5 +9,4 @@
 	<div>
 		{{official.held_office[0].ward}}
 	</div>
-	<a ui-sref="candidate({firstName:official._id.first_name, lastName:official._id.last_name})">More Details</a>
 </div>

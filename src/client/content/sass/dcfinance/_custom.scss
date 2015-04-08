@@ -1,31 +1,70 @@
 // Your custom SCSS should be written here...
 
-body {
-  height: 1000px;
+/* Structure */
+.content-block {
+  padding: 30px 0px;
+
+  h1 {
+    color: #282828;
+  }
 }
 
-// red, top-level nav bar
-.navbar {
-	background: $google-material-700;
-  @include box-shadow(0 2px 5px rgba(0,0,0,.26));
-  color: $white;
-	height: 44px;
-  min-height: inherit;
-	padding: 4px 0px;
-  position: fixed;
-  top: 0; 
+.bg-red {
+  background-color: #cf2a27;
+  h1 {
+    color: #fff;
+  }
+}
 
-  ul {
-    li { 
-      height: inherit;
-      line-height: inherit;
-      vertical-align: middle;
-    }
+/* Slideshow */
+.slide {
+  h2 {
+    font-size: 1.2rem;
+  }
+}
 
-    li:last-child {
-      padding-left: .8em; //varies depending on screen width
-    }
-  }  
+/* Nav search button */
+.search input {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAVlJREFUeNqkUm1LwlAUbjeVzU3Flu1LWFC5iSGNbL1YRP1zsRhaQYoWK+2Dc5rpBjppmm7rwGQMEUl6uNxz7uE85543zLbttVWA/YugqepHraapPdDDkUh8Z3eLYXx+PzwdNwzgEsql5/tcbi5eKp0+zmRIKuRafI74bLfFfB6hdSGbTSRYsDTlxlOx8FqpRKMbbDIZCAQcT+SIx2LBsqzzq0ue50kyCIfluLOLLBUKvUvScNB3f5gRup0O3AmW9eazHY8TBKFp6ng8nicsgW1Z3sbMCDGGgftNkryuzYZsGAa9GcNxfL7ojHCqyLKYv0MY2jvYB4uiKA+iONT19BFPhSML5rCwrQAudXgiCFD9gsFBcyulUqvVAp2maV0fDPp90zS9nGWrYRjfkGS9XptOJi7Ht6Q/BBG8vr0hKfKlWv0ZjUxz+qflg4H2ul84TkB4hNDK2/orwAA7aaMFiqegpAAAAABJRU5ErkJggg==);
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  border: 1px solid #ccc;
+  
+  border-radius: 4px;
+  box-sizing: border-box;
+  
+  padding: 10px 5px;
+  text-indent: 20px;
+  
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 2s;
+  transition: all 0.2s;
+  
+  width: 90px;
+  font-size: .7em;
+
+  &:focus {
+    background-position: -20px center;
+    text-indent: 0;
+    width: 180px;
+  }
+}
+
+.search > input:focus {
+    /* Picked a random icon from Google */
+}
+
+/* Current Officials */
+.official {
+  width: 150px;
+  height: auto;
+  float: left;
+  margin: 0px 30px 50px 0px;
+
+  .profile-pic {
+    width: 150px;
+    height: auto;
+  }
 }
 
 // cover art for the hero area - sits behind other elements
