@@ -1,16 +1,8 @@
 <md-content>
-	<table>
-		<thead>
-			<tr>
-				<td>Name</td>
-				<td>Amount</td>
-			</tr>
-		</thead>
-		<tbody ng-repeat="donor in vm.corporateContributors">
-			<tr>
-				<td>{{donor._id}}</td>
-				<td>{{donor.amount | currency}}</td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="clearfix">
+		<div ng-repeat="donor in vm.corporateContributors" class="corporate-contributer">
+			<span class="name">{{donor._id.name}}</span>
+			<span class="money-bubble money-bubble-internal">{{donor.amount | currency}}</span>
+		</div>
+	</div>
 </md-content>
