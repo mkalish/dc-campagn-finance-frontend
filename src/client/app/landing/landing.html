@@ -22,10 +22,14 @@
         <div ui-view="currentOfficials"></div>
     </div>
 </section>
-<md-content>
-	<md-divider></md-divider>
-	<div flex ui-view="topIndividual"></div>
-	<md-divider></md-divider>
-	<div flex ui-view="topCorporate"></div>
-	<md-divider></md-divider>
-</md-content>
+<section class="content-block bg-red">
+    <div class="row">
+        <h1>Who paid for their campaigns?</h1>
+        <md-content>
+            <h2>Companies</h2>
+        	<div ui-view="topCorporate"></div>
+            <h2>Individuals</h2>
+            <div ui-view="topIndividual"></div>
+        </md-content>
+    </div>
+</section>
