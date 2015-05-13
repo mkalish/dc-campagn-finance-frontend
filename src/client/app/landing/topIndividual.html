@@ -1,16 +1,9 @@
 <md-content>
-	<table>
-		<thead>
-			<tr>
-				<td>Name</td>
-				<td>Amount</td>
-			</tr>
-		</thead>
-		<tbody ng-repeat="donor in vm.individualContributors">
-			<tr>
-				<td>{{donor._id}}</td>
-				<td>{{donor.amount | currency}}</td>
-			</tr>
-		</tbody>
-	</table>
+	<div class="clearfix">
+		<div ng-repeat="donor in vm.individualContributors" class="individual-contributer">
+			<img src="http://stuartdotson.com/dev/candidate-pic.png" class="profile-pic">
+			<span class="name">{{donor._id}}</span>
+			<span class="money-bubble money-bubble-corner">{{donor.amount | currency}}</span>
+		</div>
+	</div>
 </md-content>
